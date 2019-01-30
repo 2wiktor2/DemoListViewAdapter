@@ -49,8 +49,14 @@ public class Adapter extends BaseAdapter {
         Model model = getNumber(position);
 
         TextView textView = view.findViewById(R.id.text_view_item);
+        TextView textViewId = view.findViewById(R.id.id_view_item);
+        TextView textViewPrise = view.findViewById(R.id.prise_view_item);
+
+
 
         textView.setText(model.getName());
+        textViewId.setText(" "+ model.getId());
+        textViewPrise.setText("" + model.getPrise()+" р.");
         return view;
     }
 

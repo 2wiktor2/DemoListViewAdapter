@@ -33,15 +33,15 @@ public class MainActivity extends AppCompatActivity {
 
     private List <Model> initData() {
         List <Model> list = new ArrayList <Model>();
-        list.add(new Model(1, "1", 111));
-        list.add(new Model(2, "2", 222));
-        list.add(new Model(3, "3", 333));
-        list.add(new Model(4, "4", 444));
-        list.add(new Model(5, "5", 555));
-        list.add(new Model(6, "6", 666));
-        list.add(new Model(7, "7", 777));
-        list.add(new Model(8, "8", 888));
-        list.add(new Model(9, "9", 999));
+        list.add(new Model(1, "11", 111));
+        list.add(new Model(2, "22", 222));
+        list.add(new Model(3, "33", 333));
+        list.add(new Model(4, "44", 444));
+        list.add(new Model(5, "55", 555));
+        list.add(new Model(6, "66", 666));
+        list.add(new Model(7, "77", 777));
+        list.add(new Model(8, "88", 888));
+        list.add(new Model(9, "99", 999));
 
 
         return list;
