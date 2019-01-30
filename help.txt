@@ -1,3 +1,7 @@
+
+по уроку https://www.youtube.com/watch?v=eZFNkXAF1WM
+
+
 1 Создать List View в разметке активити или фрагмента
 2 Создать Item - один элемент списка в xml
 3 получить доступ к ListView из активити
@@ -88,6 +92,50 @@
              private Model getNumber(int position) {
                     return (Model)getItem(position);
                 }
+
+             получить компонент чтобы проставить его в textView.setText();
+             getNumber(position);
+             Ctrl+Alt+V преобразуем в  - Model model = getNumber(position);
+
+             и передаем в  textView.setText(model.getName());
+
+
+3. Используем адаптер в MainActivity
+    переделываем adapter  Adapter myAdapter = new Adapter(this, )
+    переделать метод initData  из :
+        private List <String> initData() {
+                List <String> list = new ArrayList <String>();
+                list.add("1");
+                list.add("2");
+                list.add("3");
+                list.add("4");
+                list.add("5");
+                list.add("6");
+                list.add("7");
+                list.add("8");
+                list.add("9");
+                list.add("10");
+
+
+                return list;
+            }
+    в:
+       private List <Model> initData() {
+             List <Model> list = new ArrayList <Model>();
+             list.add(new Model(1, "1", 111));
+             list.add(new Model(2, "2", 222));
+             list.add(new Model(3, "3", 333));
+             list.add(new Model(4, "4", 444));
+             list.add(new Model(5, "5", 555));
+             list.add(new Model(6, "6", 666));
+             list.add(new Model(7, "7", 777));
+             list.add(new Model(8, "8", 888));
+             list.add(new Model(9, "9", 999));
+
+
+             return list;
+         }
+
 
 
 

@@ -46,10 +46,12 @@ public class Adapter extends BaseAdapter {
             view = layoutInflater.inflate(R.layout.item, parent, false);
         }
 
+        Model model = getNumber(position);
+
         TextView textView = view.findViewById(R.id.text_view_item);
 
-        textView.setText();
-        return null;
+        textView.setText(model.getName());
+        return view;
     }
 
     private Model getNumber(int position) {
