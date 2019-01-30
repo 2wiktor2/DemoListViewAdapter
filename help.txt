@@ -20,10 +20,105 @@
     Вкачестве параметра предать контекст getApplicationContext()
     или просто this
 
-    и указать ресурс  R.layout.item
+    и указать ресурс   android.R.layout.simple_list_item_1 - стандартный
+    из библиотеки android
 
     передать список элементов массива (массив или коллекция)
             initData () или для наглядности вынесем список в переменную
 
 7. Применить адаптер к списку listView
         listView.setAdapter(adapter);
+
+       // Весь код находится в классе Copy1
+
+
+
+1. Создаем класс Model
+    1.Указываем нужные поля
+        private int id;
+        private  String name;
+        private double prise;
+    2. Создаем конструктор для удобной инициализации объекта Alt+Insert
+          public Model(int id, String name, double prise) {
+                this.id = id;
+                this.name = name;
+                this.prise = prise;
+    3. Создаем геттеры и сеттеры
+2. Создаем Adapter
+    1. наследуемся от BaseAdapter public class Adapter extends BaseAdapter
+    2. Имплементим методы
+    3. Реализуем методы
+    4. Создаем список моделей List<Model> list;
+    5. Создать конструктор для более удобной инициализации
+
+        public Adapter(List <Model> list) {
+            this.list = list;
+        }
+    6. Добавить контекст в параметры конструктора
+             public Adapter(Context context, List <Model> list)
+    7. Создать     private LayoutInflater layoutInflater;
+            - позволит получить доступ к нашим лэйаутам
+    8. проинициализировать layoutInflater в конструкторе
+        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)
+    9. Реализовать getCount, getItem, getItemId
+         return list.size();
+         return list.get(position);
+          return position;
+    10. Реализовать getView
+
+        1. вынести convertView в отделный объект
+                View view = convertView;
+        2. Проверить view
+                view == null
+        3.  view = layoutInflater.inflate()
+            первый параметр - R.layout.item
+            второй параметр - parent - куда инициализируется наш view
+            третий параметр - false
+        4. Инициализация данных в списке
+                view.findViewById(R.id.text_view_item);
+        5.  вынести и преобразовать в
+             TextView textView =  view.findViewById(R.id.text_view_item);
+        6. Передать в textView значения
+
+            для этого создать метод который будет возвращать объект Model
+            передать в метод какой-то int position
+            переиспользовать метод getItem
+            явно преобразовать к типу (Model)
+
+             private Model getNumber(int position) {
+                    return (Model)getItem(position);
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,9 +1,11 @@
-package com.wiktor.demolistviewadapter;
+package com.wiktor.demolistviewadapter.Activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.wiktor.demolistviewadapter.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         // для наглядности
         List<String> items = initData();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter <String>(this, R.layout.item, items);
+        ArrayAdapter<String> adapter = new ArrayAdapter <String>
+                (this, android.R.layout.simple_list_item_1, items);
 
 listView.setAdapter(adapter);
     }
